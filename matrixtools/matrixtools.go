@@ -24,7 +24,7 @@ func GetCol(m [][]float64, j int) []float64 {
 // Addiert die beiden Zeilen paarweise und speichert das Ergebnis in der ersten Zeile.
 func AddRows(m [][]float64, i, j int) {
 	// TODO
-	arraytools.Add(m[i], m[j]) //arraytool eingefügt und dadurch enzelne spalten der Matritzen aufaddieren
+	arraytools.Add(m[i], m[j]) //arraytool eingefügt und dadurch einzelne spalten der Matritzen aufaddieren
 
 }
 
@@ -32,7 +32,11 @@ func AddRows(m [][]float64, i, j int) {
 // Multipliziert die Zeile mit dem Faktor und speichert das Ergebnis in der Zeile.
 func ScalarMultRow(m [][]float64, i int, factor float64) {
 	// TODO
-	arraytools.ScalarMult(m[i], factor)
+	for j, _ := range m[i] {
+		m[i][j] = m[i][j] * factor
+
+	}
+
 }
 
 // Transpose erwartet eine Matrix und liefert ihre Transponierte.
